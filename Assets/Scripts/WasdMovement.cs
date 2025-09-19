@@ -5,26 +5,43 @@ public class WasdMovement : MonoBehaviour
     private static readonly int Direction = Animator.StringToHash("moveDirection");
 
     public float moveSpeed = 5f;
+    public GameObject swordPrefab;
 
     private Animator animator;
     private CharacterController controller;
+    private Transform rightHand;
+    private GameObject currentSword;
 
     private MoveDirection direction = MoveDirection.Idle;
-    private int weaponType = 0;
+    private int weaponType = -1; // Non combat
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        animator.SetInteger("weaponType", weaponType);
+
         controller = GetComponent<CharacterController>();
+
+        rightHand = animator.GetBoneTransform(HumanBodyBones.RightHand).Find("B-handProp.R");
+        Debug.Log($"Right hand: {rightHand}");
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            weaponType = 1;
+            weaponType = weaponType > -1 ? -1 : 1;
             animator.SetInteger("weaponType", weaponType);
-            Debug.Log($"Switching to combat: d={animator.GetInteger("moveDirection")}, w={animator.GetInteger("weaponType")}");
+            Debug.Log(
+                $"Switching to combat: d={animator.GetInteger("moveDirection")}, w={animator.GetInteger("weaponType")}");
+            currentSword = Instantiate(swordPrefab, rightHand);
+            currentSword.transform.localPosition = Vector3.zero;
+            currentSword.transform.localRotation = Quaternion.identity;
+        }
+
+        if (animator.GetBool("attack"))
+        {
+            return;
         }
         
         var h = Input.GetAxisRaw("Horizontal");

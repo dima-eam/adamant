@@ -1,24 +1,22 @@
 using UnityEngine;
 
-public class CollisionDectector : MonoBehaviour
+public class CollisionDetector : MonoBehaviour
 {
-
     private Transform actor;
 
-    void Start()
+    private void Start()
     {
         actor = GetComponent<Transform>();
         Debug.Log($"Initialized for {name}");
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         Debug.Log($"{name} collided with {collision.gameObject.name}, stop moving");
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log($"{name} triggered with {other.gameObject.name}, stop moving");
     }
-
 }

@@ -12,6 +12,8 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        if (Input.anyKeyDown) return;
+
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
         Plane ground = new Plane(Vector3.up, transform.position);
