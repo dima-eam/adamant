@@ -829,6 +829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 4327268013391334750, guid: 24b9b6dd6a47a494488ec3fe33f7fbfa, type: 3}
+      propertyPath: attackDistance
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 5361022445678651246, guid: 24b9b6dd6a47a494488ec3fe33f7fbfa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
