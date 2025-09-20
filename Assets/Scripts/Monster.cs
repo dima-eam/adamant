@@ -13,18 +13,21 @@ public class Monster : MonoBehaviour
 
     private Transform target;
     private Animator animator;
+    private Rigidbody rb;
 
     private bool isDead;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        
         currentHealth = maxHealth;
 
         Debug.Log($"{name} initialized: health={currentHealth}");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isDead) return;
 
@@ -52,8 +55,8 @@ public class Monster : MonoBehaviour
             {
                 Vector3 direction = (target.position - transform.position).normalized;
                 direction.y = 0; // ignore vertical movement
-                transform.position += direction * (moveSpeed * Time.deltaTime);
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.15f);
+                rb.MovePosition(transform.position + direction * (moveSpeed * Time.deltaTime));
+                rb.MoveRotation(Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(direction), 0.15f));
                 animator.SetInteger("action", 1);
             }
             else
@@ -99,9 +102,10 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void Die(Vector3 hitDirection)
+    private void Die(Vector3 hitDirection)
     {
         Debug.Log($"{name} is dead");
+        rb.isKinematic = true;
         isDead = true; // TODO use direction to choose death animation
         animator.SetInteger("action", 3);
         Destroy(gameObject, 15f);
