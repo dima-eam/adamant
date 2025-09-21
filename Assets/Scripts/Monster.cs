@@ -13,19 +13,24 @@ public class Monster : MonoBehaviour
 
     private Transform target;
     private Animator animator;
+    private Rigidbody rb;
 
     private bool isDead;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        
         currentHealth = maxHealth;
 
         Debug.Log($"{name} initialized: health={currentHealth}");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        if (isDead) return;
+
         // Find player if no target yet
         if (!target)
         {
@@ -42,20 +47,21 @@ public class Monster : MonoBehaviour
         var distance = DistanceXZ(target.position);
         if (distance <= attackDistance)
         {
-            animator.SetInteger("action", 2);
+            animator.SetInteger("action", 2); // TODO enum and private field
         }
         else if (distance <= detectionRadius)
         {
-            // Chase
-            animator.SetInteger("action", 1);
-            Vector3 direction = (target.position - transform.position).normalized;
-            direction.y = 0; // ignore vertical movement
-            transform.position += direction * (moveSpeed * Time.deltaTime);
-
-            // Face the player
-            if (direction != Vector3.zero)
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("Freeze")) // still attacking
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.15f);
+                Vector3 direction = (target.position - transform.position).normalized;
+                direction.y = 0; // ignore vertical movement
+                rb.MovePosition(transform.position + direction * (moveSpeed * Time.deltaTime));
+                rb.MoveRotation(Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(direction), 0.15f));
+                animator.SetInteger("action", 1);
+            }
+            else
+            {
+                animator.SetInteger("action", 0);
             }
         }
     }
@@ -87,21 +93,6 @@ public class Monster : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (isDead) return;
-
-        if (other.gameObject.CompareTag("PlayerAttack"))
-        {
-            var damage = other.gameObject.GetComponent<WeaponBase>().damage;
-            // Calculate hit direction from weapon to monster
-            Vector3 hitDirection = (transform.position - other.transform.position).normalized;
-            TakeDamage(damage, hitDirection); // TODO invert the logic, weapon collision triggers monster to lose health
-
-            Debug.Log($"{name} got hit by {damage} damage collision");
-        }
-    }
-
     private void TakeDamage(float amount, Vector3 hitDirection)
     {
         currentHealth -= amount;
@@ -111,14 +102,12 @@ public class Monster : MonoBehaviour
         }
     }
 
-    void Die(Vector3 hitDirection)
+    private void Die(Vector3 hitDirection)
     {
-        isDead = true;
-
-        // rb.isKinematic = false;
-        // rb.useGravity = true;
-        // rb.AddForce((hitDirection + Vector3.up) * deathForce, ForceMode.Impulse);
-
+        Debug.Log($"{name} is dead");
+        rb.isKinematic = true;
+        isDead = true; // TODO use direction to choose death animation
+        animator.SetInteger("action", 3);
         Destroy(gameObject, 15f);
     }
 }
