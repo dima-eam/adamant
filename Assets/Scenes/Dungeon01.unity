@@ -206,13 +206,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8803026}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.46174863, y: 0, z: 0, w: 0.8870109}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 55, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!114 &8803031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb2fd1cee613e74ca8d869dd6db4566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
+  Offset: {x: 4, y: 8, z: -4}
   player: {fileID: 2074169350}
   obstacleMask:
     serializedVersion: 2
@@ -420,15 +421,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7506436696328154199, guid: 2014c4259a66f35499abea14d5dea8db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 7506436696328154199, guid: 2014c4259a66f35499abea14d5dea8db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.79
       objectReference: {fileID: 0}
     - target: {fileID: 7506436696328154199, guid: 2014c4259a66f35499abea14d5dea8db, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: 1.17
       objectReference: {fileID: 0}
     - target: {fileID: 7506436696328154199, guid: 2014c4259a66f35499abea14d5dea8db, type: 3}
       propertyPath: m_LocalRotation.w
