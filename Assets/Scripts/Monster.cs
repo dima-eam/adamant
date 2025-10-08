@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-// [RequireComponent(typeof(Rigidbody))]
-public class Monster : MonoBehaviour
+public class Monster : Interactable
 {
     public float detectionRadius = 10f;
     public float attackDistance = 2f;
@@ -21,7 +20,7 @@ public class Monster : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
-        
+
         currentHealth = maxHealth;
 
         Debug.Log($"{name} initialized: health={currentHealth}");
@@ -93,6 +92,11 @@ public class Monster : MonoBehaviour
         }
     }
 
+    public override void OnInteract(WasdMovement player)
+    {
+        Debug.Log("Player attacks monster: " + gameObject.name);
+    }
+
     private void TakeDamage(float amount, Vector3 hitDirection)
     {
         currentHealth -= amount;
@@ -106,7 +110,7 @@ public class Monster : MonoBehaviour
     {
         Debug.Log($"{name} is dead");
         rb.isKinematic = true;
-        isDead = true; // TODO use direction to choose death animation
+        isDead = true; // TODO use direction to choose death animation?
         animator.SetInteger("action", 3);
         Destroy(gameObject, 15f);
     }

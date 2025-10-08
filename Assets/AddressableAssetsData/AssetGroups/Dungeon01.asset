@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Dungeon01
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Dungeon01
+  m_GUID: a419e874f1cd818499c983c2c8c5f8b7
+  m_SerializeEntries:
+  - m_GUID: 0cbf4051589acc842ac20e162cbc5d22
+    m_Address: Dungeon01/RoomEntrance
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c8d315a862c1f44cadf8f2ca32b65af
+    m_Address: Dungeon01/Entrance
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24b9b6dd6a47a494488ec3fe33f7fbfa
+    m_Address: Monsters/Zombie
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ee45d4b8a655064cb817adc043034fd
+    m_Address: Dungeon01/RoomCornerLL
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4da7fa5b713d21f40a28c8be2345942b
+    m_Address: Dungeon01/FloorFlat4m
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5437023d2c17c044fb123e7f61ca6688
+    m_Address: Dungeon01/RoomWallVR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 580d8b8ec93893646b5a2c9f92908f05
+    m_Address: Dungeon01/RoomCornerLR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 911f907e95c41aa46b5c3642d9d2fa97
+    m_Address: Dungeon01/TwoRoomConnectorH
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2de58c2c96151b49aed81e0c8a98ba9
+    m_Address: Dungeon01/RoomWallHU
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2e8d060ee179c845b4c1200f8b348ae
+    m_Address: Dungeon01/RoomWallVL
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c0474ab29a0ca4a4786ab4d24df9cdd3
+    m_Address: Dungeon01/RoomCornerUR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc5a77355281854428c42505ccea729f
+    m_Address: Dungeon01/RoomWallHL
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df09dae0d81ed294bacf9a53d30bb966
+    m_Address: Dungeon01/RoomCornerUL
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee25e0fd3ec504c47aa3c913153ab64c
+    m_Address: Dungeon01/TwoRoomConnectorV
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f05b76cc637021d4d859b433a3c55bcb
+    m_Address: Dungeon01/TorchWall
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9bf3ee55af5195d46b23ca00f127596f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 41525395b6e96304f9c04ef474f84529, type: 2}
+    - {fileID: 11400000, guid: 46da1fdf1b08b804485810b0f8472db1, type: 2}
