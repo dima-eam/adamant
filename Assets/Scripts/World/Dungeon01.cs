@@ -24,12 +24,12 @@ public class Dungeon01 : DungeonTileset
 
 	private void Generate()
 	{
-		var startPosition = new Vector3(0.7f, 0f, 0f);
+		var startPosition = new Vector3(1f, 0f, 0f);
 		Instantiate(PrefabFromCache(Entrance), startPosition, Quaternion.identity);
 		var roomWidth = 3;
 		var roomHeight = Random.Range(4, 7);
 		// offset start to entrance start
-		startPosition = new Vector3(-7, 0, 10);
+		startPosition = new Vector3(-4, 0, 4);
 		rooms.Generate(startPosition, Vector3.forward, roomWidth, roomHeight);
 	}
 
