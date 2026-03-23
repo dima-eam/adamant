@@ -20,8 +20,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1c8d315a862c1f44cadf8f2ca32b65af
-    m_Address: Dungeon01/Entrance
+  - m_GUID: 14dc3fd7c6c4bf1409f16bf5c363ef33
+    m_Address: Weapon/GiantSword
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -32,6 +32,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3ee45d4b8a655064cb817adc043034fd
     m_Address: Dungeon01/RoomCornerLL
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46ca03b255332514f8a4806914c967c5
+    m_Address: Weapon/Unarmed
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -47,6 +52,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 580d8b8ec93893646b5a2c9f92908f05
     m_Address: Dungeon01/RoomCornerLR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a93233f19120a84ea80c9a8596ba0f6
+    m_Address: Dungeon01/Entrance
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -77,6 +87,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df09dae0d81ed294bacf9a53d30bb966
     m_Address: Dungeon01/RoomCornerUL
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9f2d8c21ed2eca49b2e4ee9ad4b235e
+    m_Address: Attack/UnarmedAttack
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
